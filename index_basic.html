@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+<head>
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<link rel="import" href="bower_components/rise-google-calendar/rise-google-calendar.html"> 
+</head>
+
+
+<rise-google-calendar
+id="googleCalendar"
+    calendar-id="1o42cp2inv67r5bsbsbolntf98@group.calendar.google.com"
+    start-date="2015-01-01" end-date="2015-12-31" refresh="5">
+
+<table id="calendarTable" class="pure-table pure-table-bordered">
+	<thead>
+			<tr>
+				  <th>Date</th>
+			      <th>Summary</th>
+			</tr>
+	 </thead>
+	 <tbody>
+	   <!-- dynamically populate table with calendar data -->
+	 </tbody>
+</table>
+
+</rise-google-calendar>
+</html>
+
+<script type="text/javascript" src="demo.js"></script>
+
+
+<script>
+/* global demo calendar */
+/* global demo calendar */
+(function () {
+	"use strict";
+	function webComponentsReady() {
+		window.removeEventListener("WebComponentsReady", webComponentsReady);
+		// new instance of DemoCalendar object
+    	var demo = new DemoPlaylist();
+		// initialize the content
+		demo.init();
+	}
+window.addEventListener("WebComponentsReady", webComponentsReady);
+})();
+</script>
